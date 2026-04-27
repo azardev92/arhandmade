@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Handmade | Official Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #fff;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
+        .nav-links a { margin-left: 20px; font-size: 0.9rem; font-weight: 500; color: #555; transition: 0.2s; }
+        .nav-links a:hover { color: #000; }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #faf9f8;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .hero-content { max-width: 600px; }
+        .hero h1 { font-size: 2.8rem; font-weight: 600; margin-bottom: 15px; color: #111; }
+        .hero p { font-size: 1.1rem; color: #666; margin-bottom: 30px; }
+        .btn-primary {
+            display: inline-block;
+            background-color: #111;
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .btn-primary:hover { background-color: #333; }
+
+        /* Product Grid Section */
+        .section-title { text-align: center; font-size: 2rem; font-weight: 600; margin: 60px 0 40px; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .product-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #f4f4f4;
+        }
+        .product-info { padding: 20px; text-align: center; }
+        .product-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
+        .product-category { font-size: 0.85rem; color: #888; margin-bottom: 15px; text-transform: uppercase; }
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid #111;
+            color: #111;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { background-color: #111; color: #fff; }
+
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .footer p { font-size: 0.9rem; color: #aaa; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">AR Handmade</div>
+        <div class="nav-links">
+            <a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" target="_blank">Instagram</a>
+            <a href="https://wa.me/YOUR_NUMBER" target="_blank">WhatsApp</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crafted for the Everyday</h1>
+            <p>Discover our exclusive collection of handmade bags and custom keychains. Premium quality, stitched with care.</p>
+            <a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" class="btn-primary">Shop the Collection</a>
+        </div>
+    </section>
+
+    <h2 class="section-title">Featured Pieces</h2>
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600" alt="Handmade Bag" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Classic Tote Bag</h3>
+                <p class="product-category">Handmade Bags</p>
+                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=600" alt="Custom Keychain" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Woven Keychain</h3>
+                <p class="product-category">Accessories</p>
+                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600" alt="Mini Pouch" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Mini Travel Pouch</h3>
+                <p class="product-category">Handmade Bags</p>
+                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 AR Handmade. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
