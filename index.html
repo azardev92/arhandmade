@@ -1,162 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Handmade | Official Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Base Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #333;
-            background-color: #ffffff;
-            line-height: 1.6;
-        }
-        a { text-decoration: none; color: inherit; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Handmade | Official Store</title>
 
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: #fff;
-            border-bottom: 1px solid #eaeaea;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
-        .nav-links a { margin-left: 20px; font-size: 0.9rem; font-weight: 500; color: #555; transition: 0.2s; }
-        .nav-links a:hover { color: #000; }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px;
-            background-color: #faf9f8;
-            border-bottom: 1px solid #eaeaea;
-        }
-        .hero-content { max-width: 600px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 600; margin-bottom: 15px; color: #111; }
-        .hero p { font-size: 1.1rem; color: #666; margin-bottom: 30px; }
-        .btn-primary {
-            display: inline-block;
-            background-color: #111;
-            color: #fff;
-            padding: 14px 30px;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .btn-primary:hover { background-color: #333; }
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Product Grid Section */
-        .section-title { text-align: center; font-size: 2rem; font-weight: 600; margin: 60px 0 40px; }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 5%;
-            max-width: 1200px;
-            margin: 0 auto 80px;
-        }
-        .product-card {
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .product-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            background-color: #f4f4f4;
-        }
-        .product-info { padding: 20px; text-align: center; }
-        .product-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
-        .product-category { font-size: 0.85rem; color: #888; margin-bottom: 15px; text-transform: uppercase; }
-        .btn-outline {
-            display: inline-block;
-            border: 1px solid #111;
-            color: #111;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .btn-outline:hover { background-color: #111; color: #fff; }
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
 
-        /* Footer */
-        .footer {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .footer p { font-size: 0.9rem; color: #aaa; }
-    </style>
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 5%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 160px 20px;
+    background: url('https://images.unsplash.com/photo-1520975922284-8b456906c813?q=80&w=1200') center/cover no-repeat fixed;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(225,48,108,0.6),
+        rgba(131,58,180,0.6),
+        rgba(253,29,29,0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideIn 1s forwards;
+}
+
+.hero p {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideIn 1s 0.3s forwards;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #111;
+    padding: 14px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s 0.6s forwards;
+}
+
+.btn-primary:hover {
+    background: #eee;
+}
+
+/* Slider */
+.section-title {
+    text-align: center;
+    margin: 60px 0 30px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#slider-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.slider button {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Buy button below slider */
+.buy-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 80px;
+    background: #111;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.buy-btn:hover {
+    background: #333;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Animations */
+@keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="logo">AR Handmade</div>
-        <div class="nav-links">
-            <a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" target="_blank">Instagram</a>
-            <a href="https://wa.me/YOUR_NUMBER" target="_blank">WhatsApp</a>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="logo">AR Handmade</div>
+</nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Crafted for the Everyday</h1>
-            <p>Discover our exclusive collection of handmade bags and custom keychains. Premium quality, stitched with care.</p>
-            <a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" class="btn-primary">Shop the Collection</a>
-        </div>
-    </section>
-
-    <h2 class="section-title">Featured Pieces</h2>
-    <div class="product-grid">
-        
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600" alt="Handmade Bag" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Classic Tote Bag</h3>
-                <p class="product-category">Handmade Bags</p>
-                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=600" alt="Custom Keychain" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Woven Keychain</h3>
-                <p class="product-category">Accessories</p>
-                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600" alt="Mini Pouch" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Mini Travel Pouch</h3>
-                <p class="product-category">Handmade Bags</p>
-                <a href="https://wa.me/YOUR_NUMBER" class="btn-outline">Order via WhatsApp</a>
-            </div>
-        </div>
-
+<section class="hero">
+    <div class="hero-content">
+        <h1>Crafted for the Everyday</h1>
+        <p>Handmade bags and custom keychains designed with care.</p>
+        <a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" class="btn-primary">
+            Shop on Instagram
+        </a>
     </div>
+</section>
 
-    <footer class="footer">
-        <p>&copy; 2026 AR Handmade. All rights reserved.</p>
-    </footer>
+<h2 class="section-title">Featured Pieces</h2>
+
+<div class="slider">
+    <button class="prev">&#10094;</button>
+    <img id="slider-image" src="1.jpeg">
+    <button class="next">&#10095;</button>
+</div>
+
+<a href="https://www.instagram.com/ar_handmade__?igsh=MWgxcGNpYTM4dmNzaA==" target="_blank" class="buy-btn">
+    Click here to Buy
+</a>
+
+<footer class="footer">
+    <p>© 2026 AR Handmade. All rights reserved.</p>
+</footer>
+
+<script>
+const images = [
+"1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg",
+"6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg"
+];
+
+let current = 0;
+const img = document.getElementById("slider-image");
+
+document.querySelector(".next").onclick = () => {
+    current = (current + 1) % images.length;
+    img.src = images[current];
+};
+
+document.querySelector(".prev").onclick = () => {
+    current = (current - 1 + images.length) % images.length;
+    img.src = images[current];
+};
+</script>
 
 </body>
 </html>
